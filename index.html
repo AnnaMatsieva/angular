@@ -1,0 +1,52 @@
+<html ng-app='app'>
+    <head>
+        <title>Hello Angular 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--111111111111111111111111111111111111111111111111111111-->
+        <!--input text what print in input-->
+        <!--div>
+            <input type="text" ng-model="input1">
+            <input type="text" ng-model="input2">
+            {{input1 + input2}} <!--first input data and second-->
+        <!--/div-->
+        <!--input text what print in input-->
+        
+        
+        <!--Controllers-->
+        <!--div ng-controller="myCtrl">
+            {{hello}} <!--55-->
+            <!--div ng-model="someText">
+                {{someText}}
+            </div>
+            <input type="text" ng-model="someInputText">
+            {{someInputText}}
+        </div>
+        <!--Controllers-->
+        
+        <!----222222222222222222222222222222222222222222222222222---->
+        <!--Factory обмен данными между несколькими контроллерами-->
+        <!--div ng-controller="firstCtrl">
+             <input type="text" ng-model="myFactory.hello">
+        </div>
+        
+        <div ng-controller="secondCtrl">
+             <input type="text" ng-model="myFactory.hello">
+        </div-->
+        <!--Factory-->
+        
+        <!--333333333333333333333333333333333333333333333333333333-->
+        <!--filters-->
+        <div ng-controller="moneyCtrl as moneyCtrl">
+            {{moneyCtrl.money1 | moneyFilter}}
+            {{moneyCtrl.money2 | moneyFilter}}
+            {{moneyCtrl.money3 | moneyFilter}}
+        </div>
+        <!--filters-->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="src/main.js"></script>
+    </body>
+</html>
