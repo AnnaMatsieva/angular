@@ -1,4 +1,4 @@
-/*111111111111111111111111111111111111111111111111111111*/
+/*1*/
 /*input text what print in input*/
 /*angular.module('app', []).controller('myCtrl', function($scope){
     $scope.hello = 55;
@@ -7,8 +7,8 @@
 });*/
 
 
-/*222222222222222222222222222222222222222222222222222*/
-//Factory обмен данными между несколькими контроллерами
+/*2*/
+//Factory
 var app = angular.module('app', []);
 
 /*app.controller('firstCtrl', function($scope, myFactory){
@@ -28,8 +28,8 @@ app.factory('myFactory', function(){
 });*/
 
 
-/*33333333333333333333333333333333333333333333333333333333*/
-/*Filter изменение вывода денег*/
+/*3*/
+/*Filter*/
 
 app.controller('moneyCtrl', function(){
     this.money1 = '1.22$';
