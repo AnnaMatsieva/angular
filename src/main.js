@@ -31,7 +31,7 @@ app.factory('myFactory', function(){
 /*3*/
 /*Filter*/
 
-app.controller('moneyCtrl', function(){
+/*app.controller('moneyCtrl', function(){
     this.money1 = '1.22$';
     this.money2 = '$1.33';
     this.money3 = '1.45';
@@ -52,4 +52,31 @@ app.filter('moneyFilter', function(){
             return '$' + str;
         }
     }    
+});*/
+
+
+/*--TemplateUrl, Кэширование, Restrict, Директивы--*/
+app.run(function ($templateCache) {
+    $templateCache.put('bookmarks.html', "<div ng-repeat='bookmark in bookmarks'>{{bookmark.name}}</div>");
+});
+
+app.directive('fooBar', function () {
+    var bookmarks = [
+        {
+            id: 1,
+            name: 'EmberJS'
+        },
+        {
+            id: 2,
+            name: 'AngularJS'
+        }
+    ];
+    return {
+        restrict: 'E',
+        templateUrl: "bookmarks.html",
+        link: function (scope, element, attrs) {
+            console.log('directive');
+            scope.bookmarks = bookmarks;
+        }
+    };
 });
