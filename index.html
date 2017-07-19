@@ -47,8 +47,15 @@
         <!--filters-->
         
         <!--TemplateUrl, Кэширование, Restrict, Директивы-->
-        <foo-bar></foo-bar>
+        <!--foo-bar></foo-bar-->
         <!--TemplateUrl, Кэширование, Restrict, Директивы-->
+        
+        <!-- scope true on directive-->
+        <div ng-controller="booksCtrl">
+            This is ctrl name: {{name}}
+            <book></book>
+        </div>
+        <!-- scope true on directive-->
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="src/main.js"></script>

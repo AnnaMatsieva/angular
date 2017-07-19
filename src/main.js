@@ -56,7 +56,7 @@ app.filter('moneyFilter', function(){
 
 
 /*--TemplateUrl, Кэширование, Restrict, Директивы--*/
-app.run(function ($templateCache) {
+/*app.run(function ($templateCache) {
     $templateCache.put('bookmarks.html', "<div ng-repeat='bookmark in bookmarks'>{{bookmark.name}}</div>");
 });
 
@@ -77,6 +77,23 @@ app.directive('fooBar', function () {
         link: function (scope, element, attrs) {
             console.log('directive');
             scope.bookmarks = bookmarks;
+        }
+    };
+});*/
+
+/* scope true on directive так как в scope true, то меняется текст только в одном месте, если бы было false то текст менялся бы и в контроллере и в директиве*/
+app.controller('booksCtrl', function ($scope){
+    $scope.name = 'Harry';
+    console.log('scope from ctrl', $scope);
+});
+
+app.directive('book', function () {
+    return {
+        scope: true,
+        template: "<div>My name is {{name}} <input type='text' ng-model='name'></div>",
+        link: function (scope, element, attrs) {
+            console.log('scope from directive', scope);
+            console.log(scope.name);
         }
     };
 });
