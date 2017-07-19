@@ -82,7 +82,7 @@ app.directive('fooBar', function () {
 });*/
 
 /* scope true on directive так как в scope true, то меняется текст только в одном месте, если бы было false то текст менялся бы и в контроллере и в директиве*/
-app.controller('booksCtrl', function ($scope){
+/*app.controller('booksCtrl', function ($scope){
     $scope.name = 'Harry';
     console.log('scope from ctrl', $scope);
 });
@@ -96,4 +96,28 @@ app.directive('book', function () {
             console.log(scope.name);
         }
     };
+});*/
+
+/*isoleted scope on directives*/
+app.controller('firstCtrl', function ($scope) {
+    $scope.name = 'Harry';
+    $scope.color = '#333333';
+
+    $scope.reverse = function () {
+        $scope.name = $scope.name.split('').reverse().join('');
+    };
+});
+
+app.directive('fooBar', function () {
+  return {
+    scope: {
+          name: '@',
+          color: '=',
+          reverse: '&'
+        },
+        template: "<div>My name is {{name}} <input type='text' ng-model='name'></div>" + "<div>My color is {{color}} <input type='text' ng-model='color'></div>" + "<button ng-click='reverse()'>Reverse</button>",
+        link: function ($scope, element, attrs) {
+          console.log('fooBar');
+      }
+  };
 });
